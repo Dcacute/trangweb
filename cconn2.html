@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Tables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Phần nền */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-bar {
+            height: 15%;
+            background: linear-gradient(45deg, #ffcccc, #ff99cc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(45deg, #ff7f50, #ff1493);
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            display: flex;
+            height: 85%;
+            justify-content: space-between; /* Căn đều các phần tử */
+        }
+
+        .section {
+            flex: 1; /* Đảm bảo mỗi phần tử section chiếm cùng một không gian */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Căn đều nội dung trong phần tử */
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            background: linear-gradient(135deg, #f9a8d4, #f48fb1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            min-height: 300px; /* Đảm bảo chiều cao tối thiểu cho mỗi phần tử */
+        }
+
+        table, th, td {
+            border: 1px solid #000; /* Viền bảng màu đen */
+        }
+
+        th, td {
+            color: #000; /* Màu chữ đen trong bảng */
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.5); /* Màu nền của th trong bảng vẫn là trắng với độ trong suốt */
+            font-weight: bold;
+        }
+
+        /* Style cho các nút */
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #ff66a3;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-button i {
+            font-size: 20px;
+        }
+
+        .nav-button:hover {
+            background-color: #e63973;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Thanh điều hướng trên cùng -->
+    <div class="top-bar">
+        <div class="logo">Group 1</div>
+        <nav>
+            <a href="index.html" class="nav-button">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="cconn2.html" class="nav-button">
+                <i class="fas fa-info-circle"></i> Introduce
+            </a>
+            <a href="cconn3.html" class="nav-button">
+                <i class="fas fa-project-diagram"></i> Project
+            </a>
+            <a href="cconn.html" class="nav-button">
+                <i class="fas fa-phone-alt"></i> Contact
+            </a>
+        </nav>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="content">
+        <!-- Phần 1 -->
+        <div class="section">
+            <br><br><br>
+         
+            <a href="#thanh-vien-1" class="nav-button">
+                <i class="fas fa-user"></i> Thành Viên 1
+            </a>
+            <table id="thanh-vien-1">
+                <tr>
+                    <th>Cá Nhân</th>
+                    <th>🦅</th>
+                </tr>
+                <tr>
+                    <td>Tên:</td>
+                    <td>Nguyễn Sỹ Tuân</td>
+                </tr>
+                <tr>
+                    <td>SĐT:</td>
+                    <td>0965521220</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>Nguyensituan260507@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Sở Thích</td>
+                    <td>Nuôi chim,Thể Thao</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td><a href="https://www.facebook.com/sytuan.nguyen.140" target="_blank">Sỹ Tuân</a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Phần 2 -->
+        <div class="section">
+           <br><br><br>
+       
+            <a href="#thanh-vien-2" class="nav-button">
+                <i class="fas fa-user"></i> Thành Viên 2
+            </a>
+            <table id="thanh-vien-2">
+                <tr>
+                    <th>Cá Nhân</th>
+                    <th>🐼</th>
+                </tr>
+                <tr>
+                    <td>Tên:</td>
+                    <td>Nguyễn Bá Sơn</td>
+                </tr>
+                <tr>
+                    <td>SĐT:</td>
+                    <td>0842169757</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>Nguyenbason2299@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Sở Thích</td>
+                    <td>xem phim,nghe nhạc</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td><a href="https://www.facebook.com/son.nguyen.361247/" target="_blank">Bá Sơn</a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Phần 3 -->
+        <div class="section">
+            <br><br><br>
+            
+            <a href="#thanh-vien-3" class="nav-button">
+                <i class="fas fa-user"></i> Thành Viên 3
+            </a>
+            <table id="thanh-vien-3">
+                <tr>
+                    <th>Cá Nhân</th>
+                    <th>🐸</th>
+                </tr>
+                <tr>
+                    <td>Tên:</td>
+                    <td>Đặng Nhật Khánh Linh</td>
+                </tr>
+                <tr>
+                    <td>SĐT:</td>
+                    <td>0369563943</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>khanhlinhtp11122007@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Sở Thích</td>
+                    <td>đọc sách,nấu ăn</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td><a href="https://www.facebook.com/profile.php?id=100058949993872" target="_blank">Khánh Linh</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

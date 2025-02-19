@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cải Tiến</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Thêm Font Awesome -->
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #FFB6C1, #ce92b0);
+            color: #333;
+        }
+
+        /* Phần logo */
+        .logo {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #ff7f50, #ff1493);
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Phần đầu trang */
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            animation: blinkAndColorChange 1.5s infinite;
+        }
+
+        @keyframes blinkAndColorChange {
+            0% {
+                color: #FF69B4;
+                opacity: 1;
+            }
+            50% {
+                color: #010511;
+                opacity: 0.5;
+            }
+            100% {
+                color: #090a0a;
+                opacity: 1;
+            }
+        }
+
+        /* Phần văn bản */
+        p {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.8;
+            color: #030303;
+        }
+
+        /* Phần nền đầu trang */
+        .top-section {
+            height: 33.33vh;
+            background: linear-gradient(45deg, #ce91af, #f79acb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid #aa6087;
+        }
+
+        /* Phần nền dưới */
+        .bottom-section {
+            height: 66.67vh;
+            background-color: #e784be;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: #333;
+            padding: 30px;
+            border-top: 5px solid #cf709f;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #b17f9a;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #FF69B4;
+            color: white;
+        }
+
+        /* Phần nội dung */
+        .container {
+            margin-left: 260px;
+            padding: 40px;
+        }
+
+        /* Hình ảnh */
+        .image-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            gap: 0; /* Xóa khoảng cách giữa các ảnh */
+        }
+
+        .image-section img {
+            width: 25%; /* Giảm kích thước ảnh xuống còn 30% */
+            height: 60%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-right: -5px; /* Điều chỉnh để các ảnh gần nhau hơn */
+            animation: moveUpDown 3s ease-in-out infinite;
+        }
+
+        /* Animation cho ảnh chuyển động nhẹ */
+        @keyframes moveUpDown {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hiệu ứng động cho thẻ h3 */
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            animation: bounceUpDown 2s ease-in-out infinite;
+        }
+
+        /* Animation cho thẻ h3 */
+        @keyframes bounceUpDown {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Thêm icon cho từng mục */
+        .icons-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .icons-section i {
+            font-size: 40px;
+            margin: 0 20px;
+            color: #FF69B4;
+            transition: transform 0.3s ease;
+        }
+
+        .icons-section i:hover {
+            transform: scale(1.2);
+            color: #854667;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+                padding: 15px;
+            }
+
+            .container {
+                margin-left: 220px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .image-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .image-section img {
+                width: 100%; /* Khi trên thiết bị di động, ảnh sẽ chiếm hết chiều rộng */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="cconn.html"><i class="fas fa-info-circle"></i> Contact</a></li>
+                <li><a href="cconn3.html"><i class="fas fa-project-diagram"></i> Project</a></li>
+                <li><a href="cconn2.html"><i class="fas fa-phone-alt"></i> Introduce</a></li>
+            </ul>
+        </nav>
+        <!-- Logo đặt dưới các mục menu -->
+        <div class="logo">Group 1</div>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="container">
+        <div class="top-section">
+            <h1>Chào Mừng Bạn Đến Với Dự Án Bảo Vệ Môi Trường Của Tổ 1!</h1>
+        </div>
+
+        <div class="bottom-section">
+        <br> <br>
+            <h3>🌍Chúng tôi tin rằng, mỗi hành động nhỏ có thể góp phần làm cho thế giới trở nên tốt đẹp hơn. Từ việc trồng cây, bảo vệ rừng, đến việc nâng cao nhận thức cộng đồng về bảo vệ thiên nhiên, chúng tôi cam kết đồng hành cùng mọi người vì một môi trường bền vững và xanh sạch.</h3>
+            
+            <!-- Thêm phần Icon và Hình ảnh -->
+            <div class="icons-section">
+                <i class="fas fa-seedling"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-solar-panel"></i>
+                <i class="fas fa-water"></i>
+            </div>
+            
+            <div class="image-section">
+                <img src="trong-cay.jpg" alt="Hình ảnh trồng cây xanh">
+                <img src="article.jpg" alt="Hình ảnh bảo vệ môi trường">
+                <img src="pngtree-hand-drawn-green-arbor-day-planting-illustration-png-image_5330396.jpg" alt=" vệ môi trường">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
